@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="checkout.cart.container">
+            <container name="tab-developer" htmlTag="div" htmlClass="tab-developer" after="-">
+
+            </container>
+        </referenceContainer>
+        <!--<move element="checkout.cart.totals.container" destination="checkout.cart.container"/>-->
+        <move element="cart.summary" destination="checkout.cart.container" after="-"/>
+        <!--<referenceBlock name="checkout.cart.summary.title" remove="true"/>-->
+        <!--<referenceContainer name="cart.discount" remove="true"/>-->
+        <referenceBlock name="checkout.cart.item.renderers.default.actions.edit" remove="true"/>
+        <!--<referenceBlock name="checkout.cart.shipping" remove="true"/>-->
+        <!--<referenceContainer name="header.panel" remove="true"/>-->
+        <!--<referenceContainer name="checkout.cart.items">
+            <container name="checkout.cart.container" htmlTag="div" htmlClass="cart-container" before="-">
+
+            </container>
+        </referenceContainer>
+        <move element="checkout.cart.form.before" destination="checkout.cart.container" before="cart.summary"/>
+        <move element="checkout.cart.form" destination="checkout.cart.container" after="cart.summary"/>
+        <move element="checkout.cart.widget" destination="checkout.cart.container" after="checkout.cart.form"/>
+        <move element="checkout.cart.shipping" destination="cart.summary" after="checkout.cart.summary.title"/>
+        <move element="checkout.cart.coupon" destination="cart.summary"/>
+        <move element="checkout.cart.totals.container" destination="cart.summary"/>
+        <move element="checkout.cart.methods.bottom" destination="cart.summary"/>-->
+    </body>
+</page>

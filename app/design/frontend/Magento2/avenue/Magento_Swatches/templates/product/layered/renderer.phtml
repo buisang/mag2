@@ -1,0 +1,42 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var $block \Magento\Swatches\Block\LayeredNavigation\RenderLayered */
+?>
+<?php $swatchData = $block->getSwatchData(); ?>
+<div class="swatch-attribute swatch-layered <?php /* @escapeNotVerified */ echo $swatchData['attribute_code'] ?>"
+     attribute-code="<?php /* @escapeNotVerified */ echo $swatchData['attribute_code'] ?>" attribute-id="174">
+    <div class="swatch-attribute-options clearfix">
+        <ol class="items">
+        <?php foreach ($swatchData['options'] as $option => $label): ?>
+            <li class="item">
+                <form>
+                    <label class="label-ckeckbox">
+                        <span class="check-box-color">
+                            <input type="checkbox" name="vehicle"  onclick='window.location.assign("<?php /* @escapeNotVerified */ echo $label['link'] ?>")'/>
+                            <span class="check"></span>
+                            <span class="label">
+                                <?php /* @escapeNotVerified */ echo $label['label'] ?>
+                            </span>
+                        </span>
+
+                    </label>
+                </form>
+                </li>
+        <?php endforeach; ?>
+            </ol>
+    </div>
+</div>
+
+<script>
+    require(["jquery", "jquery/ui", "swatchRenderer"], function ($) {
+        $('.swatch-layered.<?php /* @escapeNotVerified */ echo $swatchData['attribute_code'] ?>')
+            .find('[option-type="1"], [option-type="2"], [option-type="0"], [option-type="3"]')
+            .SwatchRendererTooltip();
+    });
+</script>

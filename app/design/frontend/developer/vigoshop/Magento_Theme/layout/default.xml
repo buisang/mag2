@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+<!--header-->
+        <referenceContainer name="header.container">
+            <container  htmlClass="full-top-header"  htmlTag="div" name="full-top-header" before="-">
+                <container  htmlClass="limit-content"  htmlTag="div" name="custom.limit.content.topmenu" >
+                    <block class="Magento\Framework\View\Element\Template" name="top-head-menu" template="Magento_Theme::html/headmenu.phtml">
+                    </block><!--insert menu top header -->
+
+                    <!---->
+                </container>
+            </container>
+            <container  htmlClass="full-header-logo"  htmlTag="div" name="full-header-logo" after="full-top-header">
+                <container  htmlClass="limit-content"  htmlTag="div" name="custom.limit.content.logo"  after="full-top-header">
+                    <block class="Magento\Framework\View\Element\Template" before="-" name="login-regist" template="Magento_Theme::html/login-regist.phtml"/>
+
+                    <container  htmlClass="header-logo-vigo"  htmlTag="div" name="header-logo-vigo" >
+                    </container>
+                </container>
+            </container>
+        </referenceContainer>
+        <!--<move element="minicart" destination="custom.limit.content.topmenu" after="-"/>-->
+        <move element="logo" destination="header-logo-vigo" />
+        <referenceContainer name="header.panel.wrapper" remove="true"/>
+        <referenceContainer name="header.panel" remove="true"/>
+        <referenceBlock name="header" remove="true"/>
+        <referenceBlock name="authorization-link" destination="top.links" remove="true"/>
+        <referenceBlock name="minicart" remove="true"/>
+        <referenceContainer name="compare-link-wrapper" remove="true"/>
+        <referenceContainer name="header-wrapper" remove="true"/>
+
+<!--end header-->
+
+<!--format menu-->
+        <referenceContainer name="page.top">
+            <container class="Magento\Theme\Block\Html\Header" htmlClass="nolimit-menu"  htmlTag="div" name="custom.nolimit.content.menu" >
+                <container class="Magento\Theme\Block\Html\Header" htmlClass="limit-content-menu"  htmlTag="div" name="custom.limit.content.menu" >
+                </container>
+            </container>
+        </referenceContainer>
+        <move element="catalog.topnav" destination="custom.limit.content.menu" />
+        <referenceBlock name="navigation.sections" remove="true"/>
+        <move element="top.search" destination="catalog.topnav"  after="-"/>
+
+        <move element="breadcrumbs" destination="main.content"  before="-"/>
+<!--end menu-->
+<!--slide-->
+        <!--<referenceContainer name="main.content" >-->
+        <!--<block class="Magento\Framework\View\Element\Template" before="-" name="slidertopcontent" template="Magento_Theme::html/slider.phtml"/>-->
+        <!--</referenceContainer>-->
+<!--end slide-->
+
+<!--main-->
+        <!--<referenceContainer name="breadcrumbs" after="custom.nolimit.content.menu"></referenceContainer>-->
+        <!--<block class="Magento\Theme\Block\Html\Breadcrumbs" name="breadcrumbs" as="breadcrumbs"/>-->
+        <!--<container name="page.wrapper" as="page_wrapper" htmlTag="div" htmlClass="page-wrapper">
+            <container name="global.notices" as="global_notices" before="-"/>
+            <container name="main.content" htmlTag="main" htmlId="maincontent" htmlClass="page-main">
+                <container name="columns.top" label="Before Main Columns"/>
+                <container name="columns" htmlTag="div" htmlClass="columns">
+                    <container name="main" label="Main Content Container" htmlTag="div" htmlClass="column main"/>
+                </container>
+            </container>
+            <container name="page.bottom.container" as="page_bottom_container" label="Before Page Footer Container" after="main.content" htmlTag="div" htmlClass="page-bottom"/>
+            <container name="before.body.end" as="before_body_end" after="-" label="Page Bottom"/>
+        </container>-->
+<!--end main-->
+    </body>
+</page>

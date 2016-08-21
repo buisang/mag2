@@ -1,0 +1,72 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+$_imgUrl = $block->getCurrentCategory()->getImageUrl();
+$_imggb = '';
+if ($_imgUrl) {
+    $_imggb = $_imgUrl;
+} else {
+    $_imggb = $block->getViewFileUrl('images/banner_home.jpg');
+}
+?>
+
+<style>
+    .s-category-banner {
+
+        width: 100%;
+        font-weight: bold;
+        min-height: 300px;
+        background: url('<?php echo $_imggb;?>') #0a6680 no-repeat center;
+        text-align: center;
+        color: #fff;
+    }
+
+    .s-category-banner h1 {
+        font-size: 25px;
+        font-weight: bold;
+        padding-top: 53px;
+        /*margin-bottom: 15px;*/
+
+    }
+
+    hr {
+        width: 90px;
+        margin: 15px auto;
+    }
+
+    .s-category-banner p {
+        font-size: 20px;
+    }
+
+    .s-category-banner h1 {
+        font-size: 45px;
+        font-weight: bold;
+        padding-top: 53px;
+        margin-bottom: 15px;
+    }
+</style>
+<?php /*echo $block->getViewFileUrl('images/banner_home.jpg').'<br>';
+echo $_imggb;
+*/?>
+<div class="s-category-banner">
+    <!-- category name -->
+    <?php if ($categoryDescription = $block->escapeHtml($block->getCurrentCategory()->getName())): ?>
+        <h1 class="s-category-name">
+            <?php echo $categoryDescription; ?>
+        </h1>
+        <hr>
+    <?php endif; ?>
+
+    <!-- category description -->
+    <?php if ($_description = $block->getCurrentCategory()->getDescription()): ?>
+        <?php echo $_description; ?>
+    <?php endif; ?>
+</div>
+

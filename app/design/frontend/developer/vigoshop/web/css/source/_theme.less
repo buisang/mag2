@@ -1,0 +1,354 @@
+@color-gray-middle3: #2A2A2A;
+@icon-font__size: 40px;
+@icon-font__color: red;
+@icon-checkmark: '\e610';
+@font-face {
+  font-family: neutoncursive;
+  src: url(../../fonts/NeutonCursive-Regular.ttf);
+}
+@font-face {
+  font-family: scada-regular;
+  src: url(../../fonts/scada.regular.ttf);
+}
+
+@font-face {
+  font-family: SourceCodePro-Semibold;
+  src: url(../../fonts/SourceCodePro-Semibold.ttf);
+}
+*{
+
+  margin: 0;
+  padding: 0;
+}
+.page-wrapper{
+  background: #FBFBFB;
+  width: 100%;
+  margin: 0 auto;
+}
+.limit-content-menu {
+  font-family: neutoncursive;
+}
+//toplink
+.top-left{
+  float: left;
+}
+
+.top-left ul li{
+  border-right: 2px solid #404040;
+  list-style: none;
+  float: left;
+}
+.head-li-right:last-child{
+  border-right:none;
+}
+.top-right{
+  float: right;
+}
+.top-right ul li{
+  border-right:2px solid #404040;
+  list-style: none;
+  float: left;
+}
+.head-li:last-child{
+  border-right:none;
+}
+.top-left ul li a {
+  font-family: neutoncursive;
+  padding: 0 14px;
+  text-transform: capitalize;
+  color: white;
+}
+.top-right ul li a {
+  padding: 0 14px;
+  text-transform: capitalize;
+  color: white;
+}
+/*.icon-checks{
+  .lib-icon-font(
+    @_icon-font-content: @icon-checkmark,
+    @_icon-font-size: 24px
+  );
+}*/
+
+.head_login-regist ul li {
+  list-style: none;
+  float: left;
+}
+.head_login-regist ul li a {
+
+  padding: 0 14px;
+  text-transform: capitalize;
+  color: black;
+}
+//end toplink
+.limit-content{
+  width: 1170px;
+  margin: 0 auto;
+  padding: 0;
+  //border: 2px solid red ;
+
+}
+.full-top-header {
+  background: black;
+  width: 100%;
+  float: left;
+}
+
+.full-header-logo {
+  width: 100%;
+  float: left;
+}
+
+.header-logo-vigo {
+  width: 300px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+.head_login-regist {
+  float: left;
+}
+.logo {
+  float: none;
+  margin: 0;
+  max-width: none;
+  position: static;
+}
+
+#maincontent{
+  width: 1170px;
+  margin: 0 auto;
+
+}
+.nolimit-menu{
+  width: 100%;
+  border-bottom: 2px solid #E6E6E6;
+  margin-bottom: 15px;
+}
+.limit-content-menu{
+  .limit-content;
+  border-top: 1px solid #E6E6E6;
+}
+.block-search {
+  margin: 11px 0;
+}
+
+
+
+.page-products .products-grid .product-item {
+  width: 32%;
+  margin-left: calc(~"(100% - 3 * 32%) / 2");
+  padding: 0;
+  &:nth-child(3n+1) {
+    margin-left: 0;
+  }
+}
+
+//icon sale-new
+span.sale {
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100000;
+  color: red;
+  border: 1px solid red;
+  padding: 8px 20px;
+  border-radius: 5px;
+}
+
+li.item.product.product-item {
+  position: relative;
+}
+//end icon sale-new
+
+
+//produtc
+
+
+.products-grid {
+  .product-item-inner {
+    position: absolute;
+    left: 0;
+    bottom: 50%;
+    right: -1px;
+    z-index: 2;
+    background: rgba(89, 188, 61, 0.27);
+    padding: 0 9px 9px 9px;
+    margin: 9px 0 0 -1px;
+    border: none;
+    border-top: none;
+    box-shadow: none;
+    display: table;
+    margin: 0 auto;
+  }
+  .swatch-attribute-options {
+    display: table;
+    margin: 0 auto;
+  }
+  .product-item-name {
+    text-align: center;
+  }
+  .product-item .price-box {
+    text-align: center;
+  }
+  .listing-price{
+    display: none;
+  }
+
+  .product-pire-addtocard{
+    display:none;
+  }
+
+}
+.products-list{
+      .grid-price{
+          display: none;
+      }
+      .product-item-info {
+        display: initial;
+        .swatch-attribute-options {
+          display: table;
+          margin: 0 auto;
+        }
+      }
+      .list-color{
+        float: left;
+      }
+  .product-descaption .product-item-actions {
+        float: right;
+        width: 30%;
+        display: none;
+      }
+
+      .product-descaption {
+        display: table-cell;
+        width: 1%;
+        border-right: 1px solid red;
+      }
+      .product-pire-addtocard {
+        text-align: center;
+        display: table-cell;
+        width:1%;
+      }
+      .actions-secondary {
+        display: table;
+      }
+      .product-item-details {
+        vertical-align: top;
+        display: block;
+      }
+      .product-item-actions .actions-primary + .actions-secondary {
+        display: table-caption;
+        width: 50%;
+        padding-left: 96px;
+      }
+      .product-item-actions .actions-primary {
+        display: block;
+      }
+}
+
+
+
+.product-image-wrapper:not(.products-grid,.product-item-info) :hover, .products-grid .product-item-info.active{
+  border:none;
+  box-shadow: none;
+}
+.products.wrapper ~ .toolbar .pages {
+  float: right;
+  margin-bottom: 0;
+  margin-left: 20px;
+}
+
+.rating-summary .rating-result {
+  width: 100px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  margin-top: 10px;
+}
+
+.products-grid .product-item-info:hover {
+  margin: -10px;
+  padding: 9px;
+  border: none !important;
+  box-shadow: none !important;
+  position: relative;
+  z-index: 2;
+  background: #fff;
+}
+
+.products-grid .product-item-info:hover  .product-image-photo {
+  opacity: 0.5;
+}
+.old-price{
+  text-decoration: line-through;//gạch chân giá cũ
+}
+.stock.unavailable {
+  font-weight: bold;
+  color: #444444;
+  border: 2px solid #444444;
+}
+
+
+//button next page
+.pages .action.next:before {
+  line-height: inherit;
+}
+
+.toolbar-products .pages {
+  display: inline-block;
+  float: right;
+}
+
+.page-products .toolbar .limiter {
+  display: inline-block;
+  float: left;
+  margin-left: 15%;
+}
+.modes-mode:before {
+  line-height: inherit;
+}
+
+.page-products .sorter {
+  float: left;
+  margin-left: 50px;
+  margin-top: -3px;
+  position: static;
+}
+
+
+//main
+.page-main {
+  box-sizing:inherit;
+}
+//.next{
+//  line-height: inherit;
+//}
+
+//product view
+button#product-addtocart-button {
+  float: right;
+  padding: 10px;
+  margin-right: 163px;
+  width: 30%;
+  background-color: #f06355;
+  border: none;
+}
+.product-options-bottom .price-box .price-container .price, .product-info-price .price-box .price-container .price {
+  font-size: 22px;
+  line-height: inherit;
+}
+.product-options-bottom .price-box, .product-info-price .price-box {
+  text-align: center;
+}
+.product-info-main .product-reviews-summary {
+  width: 100%;
+  border-top: 1px solid #4a4848;
+  float: left;
+  border-bottom: 1px solid #4a4848;
+}
+.product-info-main .product-info-stock-sku {
+  text-align: left;
+  padding-left: 0;
+  padding-bottom: 10px;
+}

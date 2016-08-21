@@ -1,0 +1,142 @@
+// /**
+//  * Copyright © 2016 Magento. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+  .block.filter {
+    margin-bottom: @indent__xl;
+    .filter-title {
+      margin-bottom: @indent__base;
+      strong {
+        font-size: 18px;
+      }
+    }
+  }
+  .filter-subtitle {
+    display: none;
+  }
+
+  .filter-options-content {
+    .filter-count-label {
+      &:extend(.abs-visually-hidden all);
+    }
+  }
+  .filter-options {
+    margin: 0;
+    .filter-options-title {
+      .lib-heading(h4);
+      margin: 0 0 @indent__s;
+      word-break: break-all;
+    }
+    .filter-options-content {
+      border-bottom: 1px solid @color-purple-avenue;
+      border-top: 2px solid @color-purple-avenue;
+      max-height: 170px; //tao scroll cho sidebar
+      overflow-y: auto; //tao scroll cho sidebar
+      overflow-x: hidden;
+      margin: 0 0 @indent__m;
+      .item {
+        margin-bottom: 3px;
+        //style checkbox
+        .label-ckeckbox{
+            padding: 3px 0;
+            input{
+              display: none;
+            }
+            input:checked ~ span.check{
+              background-position: 0 -18px;
+            }
+          .check{
+            vertical-align: middle;
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: url(../images/checkbox.png) no-repeat 0 0;
+          }
+        }
+      }
+
+
+    }
+    .count {
+      .lib-css(color, @text__color__muted);
+      &:before {
+        content: '(';
+      }
+      &:after {
+        content: ')';
+      }
+    }
+  }
+  .items {
+    &:extend(.abs-reset-list all);
+  }
+  .filtered {
+    .items {
+      margin: 15px 0;
+    }
+    .item {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 6px;
+      .label {
+        font-weight: @font-weight__bold;
+      }
+      .action.remove {
+        &:extend(.abs-remove-button-for-blocks all);
+        position: absolute;
+        left: -6px;
+        top: 0;
+      }
+    }
+    & + .actions {
+      margin-bottom: 35px;
+    }
+  }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+  .page-with-filter {
+    .columns {
+      .sidebar-main {
+        .lib-vendor-prefix-order(0);
+      }
+    }
+  }
+}
+//
+//  admin coustom
+//  _____________________________________________
+
+
+.label-ckeckbox {
+  display:block;
+}
+
+.label-ckeckbox:hover {
+  cursor:pointer;
+}
+
+.sidebar-main ::-webkit-scrollbar {
+  width: 10px;
+}
+.sidebar-main ::-webkit-scrollbar-track {
+  background-color: #f1e9ef;
+  border-left: 1px solid #f1e9ef;
+}
+.sidebar-main ::-webkit-scrollbar-thumb {
+  background-color: #732365;
+}
+.sidebar-main ::-webkit-scrollbar-thumb:hover {
+  background-color: #732365;
+}

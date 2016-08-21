@@ -1,0 +1,46 @@
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__s) {
+    .table {
+        .table > tbody > tr > th{
+            border-top:none;
+        }
+        .table > tbody > tr > td{
+            border-top:none;
+        }
+        .table > tbody > tr > th, .table > tbody > tr > td {
+            border-top: none;
+        }
+      tr.totals.sub {
+        border-top: 1px solid @color-table-checkcard;
+        border-bottom: 1px solid @color-table-checkcard;
+      }
+      th.mark {
+        border-bottom: none;
+        border-right: 1px solid @color-table-checkcard;
+      }
+      tr.grand.totals {
+          border-top: double @color-table-checkcard;
+          border-bottom: double @color-table-checkcard;
+        }
+      .table > tbody{
+        border: 1px solid @color-table-checkcard;
+        border-left: none;
+        border-right:none;
+      }
+      .table-caption{
+        display: none;
+      }
+
+
+    }
+  table.data.table.totals {
+    margin-top:20px;
+  }
+  table > th {
+    border-top: none;
+    border-bottom: none;
+  }
+}

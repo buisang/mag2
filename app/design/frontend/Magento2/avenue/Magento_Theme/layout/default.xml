@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_img_width" xsi:type="number">300</argument>
+                <argument name="logo_img_height" xsi:type="number">85</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceContainer name="header-wrapper">
+
+            <container name="header-mybag-account" htmlClass="account-mybag" htmlTag="ul" after="-">
+                <block class="Magento\Customer\Block\Account\Link" name="account-link">
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">Account</argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceContainer>
+        <move element="minicart" destination="header-mybag-account" after="-"/>
+        <move element="top.search" destination="header-wrapper" before="-"/>
+        <referenceContainer name="header.panel" remove="true" />
+        <referenceBlock name="report.bugs" remove="true" />
+        <referenceBlock name="form.subscribe" remove="true" />
+        <referenceBlock name="store_switcher" remove="true" />
+        <referenceContainer name="footer">
+            <block class="Magento\Framework\View\Element\Template" name="footer-link-content" template="Magento_Theme::html/footer-content-admin.phtml"/>
+        </referenceContainer>
+        <referenceContainer name="footer-container">
+            <container name="coppy-right-footer"  htmlTag="div" htmlClass="coppy-right-footer" after="-">
+                <container name="coppy-right-limt"  htmlTag="div" htmlClass="coppy-right-limit" >
+                </container>
+            </container>
+        </referenceContainer>
+        <move element="copyright" destination="coppy-right-limt" />
+        <referenceBlock name="footer_links" remove="true" />
+
+        <!--<referenceContainer name="footer-container">-->
+            <!--<container name="footer" as="footer" label="Page Footer" htmlTag="div" htmlClass="footer content">-->
+                <!--<block class="Magento\Store\Block\Switcher" name="store_switcher" as="store_switcher" template="switch/stores.phtml"/>-->
+                <!--<block class="Magento\Framework\View\Element\Html\Links" name="footer_links">-->
+                    <!--<arguments>-->
+                        <!--<argument name="css_class" xsi:type="string">footer links</argument>-->
+                    <!--</arguments>-->
+                <!--</block>-->
+                <!--<block class="Magento\Theme\Block\Html\Footer" name="copyright" template="html/copyright.phtml"/>-->
+                <!--<block class="Magento\Framework\View\Element\Template" name="report.bugs" template="Magento_Theme::html/bugreport.phtml" />-->
+            <!--</container>-->
+        <!--</referenceContainer>-->
+
+    </body>
+</page>
